@@ -1,9 +1,10 @@
 import React from "react";
+import Navbar from "../layouts/Navbar";
 
 function index() {
   return (
     <div>
-      <h1 className="border-2">index</h1>
+      <Navbar />
     </div>
   );
 }
