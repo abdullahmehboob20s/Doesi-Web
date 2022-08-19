@@ -101,4 +101,38 @@
     @apply bg-[#4D89FB] w-[120px] h-[34px] rounded-[.4rem];
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+
+  .tab {
+    @apply border-[3px] border-transparent relative;
+  }
+
+  .tab::before {
+    @apply content-[""] absolute top-[110%] left-0 w-full h-[3px] bg-transparent;
+  }
+
+  .tab.tab-active {
+    @apply border-[#1154ff];
+  }
+  .tab.tab-active::before {
+    @apply content-[""] absolute top-[110%] left-0 w-full h-[3px] bg-[#1154ff];
+  }
+}
+
+.features-slider {
+  padding-bottom: 1.4rem !important;
+}
+
+.swiper-pagination {
+  bottom: unset !important;
+  top: 90% !important;
+}
+
+.swiper-pagination-bullet {
+  min-width: 12px !important;
+  min-height: 12px !important;
+  background-color: #282828 !important;
+  transition: all 0.2s ease !important;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #05153c !important;
 }
