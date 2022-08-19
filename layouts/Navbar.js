@@ -3,7 +3,7 @@ import { IoMenu } from "react-icons/io5";
 
 function Navbar() {
   return (
-    <div className="fixed top-0 w-full">
+    <nav className="fixed top-0 w-full">
       <div className="container py-[1.6rem] flex items-center space-x-[1rem]">
         <img src="images/logo.svg" className="cursor-pointer" alt="" />
 
@@ -15,7 +15,7 @@ function Navbar() {
           </button>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 

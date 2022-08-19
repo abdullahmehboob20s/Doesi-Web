@@ -10,7 +10,11 @@ module.exports = {
     fontFamily: {
       Calibri: "Calibri",
     },
-    extend: {},
+    extend: {
+      colors: {
+        pink: "#C550FC",
+      },
+    },
   },
   variants: {
     extend: {},
