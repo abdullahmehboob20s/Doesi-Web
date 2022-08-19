@@ -6,10 +6,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import FeatureCard from "components/FeatureCard";
+import useMediaQuery from "hooks/useMediaQuery";
 
 function Features() {
   const defaultIndex = 2;
   const [dataIndex, setDataIndex] = useState(defaultIndex);
+  const isAbove768px = useMediaQuery("(min-width : 768px)");
 
   const data = [
     {
@@ -124,15 +126,15 @@ function Features() {
       <Tabs defaultTab={3}>
         <div className="container">
           <header>
-            <h1 className="text-center text-white text-3xl font-bold mb-[22px]">
+            <h1 className="text-center text-white text-3xl font-bold mb-[22px] md:mb-10 lg:mb-16 xl:text-5xl">
               Unbeatable Features
             </h1>
           </header>
 
           <main>
-            <div className="grid grid-cols-[1fr,1fr] gap-[2rem] mb-[4rem]">
+            <div className="grid grid-cols-[1fr,1fr] gap-[2rem] mb-[4rem] sm:max-w-[30rem] sm:mx-auto md:flex items-center justify-between md:max-w-none">
               <div
-                className={`tab bg-[rgba(17,84,255,0.2)] cursor-pointer flex items-center justify-center h-[40vw] ${
+                className={`tab bg-[rgba(17,84,255,0.2)] cursor-pointer flex items-center justify-center h-[40vw] sm:h-[12rem] md:h-auto md:aspect-square flex-1 ${
                   dataIndex === 0 ? "tab-active" : ""
                 }`}
                 onClick={() => setDataIndex(0)}
@@ -144,7 +146,7 @@ function Features() {
                 />
               </div>
               <div
-                className={`tab bg-[rgba(17,84,255,0.2)] cursor-pointer flex items-center justify-center h-[40vw] ${
+                className={`tab bg-[rgba(17,84,255,0.2)] cursor-pointer flex items-center justify-center h-[40vw] sm:h-[12rem] md:h-auto md:aspect-square flex-1 ${
                   dataIndex === 1 ? "tab-active" : ""
                 }`}
                 onClick={() => setDataIndex(1)}
@@ -156,7 +158,7 @@ function Features() {
                 />
               </div>
               <div
-                className={`tab bg-[rgba(17,84,255,0.2)] cursor-pointer flex items-center justify-center h-[40vw] ${
+                className={`tab bg-[rgba(17,84,255,0.2)] cursor-pointer flex items-center justify-center h-[40vw] sm:h-[12rem] md:h-auto md:aspect-square flex-1 ${
                   dataIndex === 2 ? "tab-active" : ""
                 }`}
                 onClick={() => setDataIndex(2)}
@@ -168,7 +170,7 @@ function Features() {
                 />
               </div>
               <div
-                className={`tab bg-[rgba(17,84,255,0.2)] cursor-pointer flex items-center justify-center h-[40vw] ${
+                className={`tab bg-[rgba(17,84,255,0.2)] cursor-pointer flex items-center justify-center h-[40vw] sm:h-[12rem] md:h-auto md:aspect-square flex-1 ${
                   dataIndex === 3 ? "tab-active" : ""
                 }`}
                 onClick={() => setDataIndex(3)}
@@ -180,9 +182,9 @@ function Features() {
                 />
               </div>
 
-              <div className="col-span-2 flex justify-center">
+              <div className="col-span-2 flex justify-center md:aspect-square md:flex-1">
                 <div
-                  className={`tab bg-[rgba(17,84,255,0.2)] cursor-pointer flex items-center justify-center h-[40vw] ${
+                  className={`tab bg-[rgba(17,84,255,0.2)] cursor-pointer flex items-center justify-center h-[40vw] sm:h-[12rem] md:h-auto md:aspect-square ${
                     dataIndex === 4 ? "tab-active" : ""
                   }`}
                   onClick={() => setDataIndex(4)}
@@ -197,18 +199,26 @@ function Features() {
             </div>
 
             <div>
-              <Swiper
-                spaceBetween={30}
-                pagination={true}
-                modules={[Pagination]}
-                className="features-slider"
-              >
-                {data[dataIndex].cards.map((item, index) => (
-                  <SwiperSlide key={index}>
-                    <FeatureCard {...item} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+              {isAbove768px ? (
+                <div className="grid grid-cols-2 gap-[2rem]">
+                  {data[dataIndex].cards.map((item, index) => (
+                    <FeatureCard key={index} {...item} />
+                  ))}
+                </div>
+              ) : (
+                <Swiper
+                  spaceBetween={30}
+                  pagination={true}
+                  modules={[Pagination]}
+                  className="features-slider"
+                >
+                  {data[dataIndex].cards.map((item, index) => (
+                    <SwiperSlide key={index}>
+                      <FeatureCard {...item} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              )}
             </div>
           </main>
         </div>

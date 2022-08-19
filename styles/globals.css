@@ -94,7 +94,7 @@
 
 @layer components {
   .container {
-    @apply max-w-[1700px] w-[90%] mx-auto;
+    @apply max-w-[1700px] w-[90%] mx-auto xl:w-[78%];
   }
 
   .button {
@@ -103,7 +103,7 @@
   }
 
   .tab {
-    @apply border-[3px] border-transparent relative;
+    @apply border-[3px] border-transparent relative xl:border-[4px];
   }
 
   .tab::before {
@@ -114,7 +114,7 @@
     @apply border-[#1154ff];
   }
   .tab.tab-active::before {
-    @apply content-[""] absolute top-[110%] left-0 w-full h-[3px] bg-[#1154ff];
+    @apply content-[""] absolute top-[110%] left-0 w-full h-[3px] bg-[#1154ff] xl:h-[4px];
   }
 }
 
@@ -133,6 +133,7 @@
   background-color: #282828 !important;
   transition: all 0.2s ease !important;
 }
+
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #05153c !important;
 }
