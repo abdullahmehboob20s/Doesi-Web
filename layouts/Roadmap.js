@@ -1,4 +1,5 @@
 import RoadmapRoad from "components/RoadmapRoad";
+import useMediaQuery from "hooks/useMediaQuery";
 import React from "react";
 import { MdDone } from "react-icons/md";
 
@@ -19,28 +20,60 @@ const Point = ({ text }) => {
 };
 
 function Roadmap() {
+  const isAbove1024px = useMediaQuery("(min-width : 1024px)");
+
   return (
     <div className="py-[4rem] pb-[6rem]">
       <div className="container">
-        <h1 className="text-4xl white font-semibold mb-[32px]">Roadmap</h1>
+        {isAbove1024px ? (
+          <div className="flex space-x-16 items-center">
+            <div className="flex-1">
+              <h1 className="white font-semibold mb-4 text-5xl">Roadmap</h1>
+              <h2 className="text-lg font-bold mb-6 opacity-[0.6] max-w-[20rem]">
+                Dosei is no ordinary NFT project. Dosei has a roadmap filled
+                with plans such as:
+              </h2>
+              <div className="space-y-2">
+                <Point text="Dosei Software" />
+                <Point text="Dosei mobile app" />
+                <Point text="Reward Top Members with Ethereum/Other NFT’s" />
+                <Point text="Quality Airdrops" />
+                <Point text="Routine social gatherings, nightclubs, and events for holders" />
+                <Point text="Budget Eth to make an entrance into the Space Flight Arena" />
+              </div>
+            </div>
 
-        <div className="mb-6">
-          <RoadmapRoad />
-        </div>
+            <div className="flex-1 flex">
+              <div className="sm:max-w-[28rem] sm:w-full">
+                <RoadmapRoad />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <>
+            <h1 className="text-4xl white font-semibold mb-[32px] sm:mb-16 sm:text-5xl">
+              Roadmap
+            </h1>
 
-        <h2 className="text-lg font-bold mb-6">
-          Dosei is no ordinary NFT project. Dosei has a roadmap filled with
-          plans such as:
-        </h2>
+            <div className="mb-6 sm:max-w-[28rem] sm:w-full">
+              <RoadmapRoad />
+            </div>
 
-        <div className="space-y-2">
-          <Point text="Dosei Software" />
-          <Point text="Dosei mobile app" />
-          <Point text="Reward Top Members with Ethereum/Other NFT’s" />
-          <Point text="Quality Airdrops" />
-          <Point text="Routine social gatherings, nightclubs, and events for holders" />
-          <Point text="Budget Eth to make an entrance into the Space Flight Arena" />
-        </div>
+            <h2 className="text-lg font-bold mb-6">
+              Dosei is no ordinary NFT project. Dosei has a roadmap filled with
+              plans such as:
+            </h2>
+
+            <div className="space-y-2">
+              <Point text="Dosei Software" />
+              <Point text="Dosei mobile app" />
+              <Point text="Reward Top Members with Ethereum/Other NFT’s" />
+              <Point text="Quality Airdrops" />
+              <Point text="Routine social gatherings, nightclubs, and events for holders" />
+              <Point text="Budget Eth to make an entrance into the Space Flight Arena" />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
