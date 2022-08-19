@@ -20,7 +20,7 @@ const Point = ({ text }) => {
 
 function Roadmap() {
   return (
-    <div className="py-[4rem]">
+    <div className="py-[4rem] pb-[6rem]">
       <div className="container">
         <h1 className="text-4xl white font-semibold mb-[32px]">Roadmap</h1>
 
