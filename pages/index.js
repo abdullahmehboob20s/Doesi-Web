@@ -6,10 +6,12 @@ import Roadmap from "layouts/Roadmap";
 
 function index() {
   return (
-    <div>
+    <div id="Home">
       <Navbar />
       <HeroSection />
-      <Features />
+      <div id="Features">
+        <Features />
+      </div>
       <Roadmap />
       <Footer />
     </div>

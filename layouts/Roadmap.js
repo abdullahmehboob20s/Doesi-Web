@@ -24,7 +24,7 @@ function Roadmap() {
   const isAbove1024px = useMediaQuery("(min-width : 1024px)");
 
   return (
-    <div className="py-[4rem] pb-[6rem] relative">
+    <div className="py-[4rem] pb-[6rem] relative" id="Roadmap">
       <div className="absolute top-0 left-0 w-full h-full z-[-10]">
         <Image
           src="/images/features-bg.png"

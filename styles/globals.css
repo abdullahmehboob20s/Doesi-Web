@@ -87,6 +87,10 @@
     @apply text-white font-Calibri;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-[#040811] text-white;
   }

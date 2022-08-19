@@ -2,6 +2,7 @@ import OutsideClickDetector from "hooks/OutsideClickDetector";
 import React, { useEffect, useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { FaTwitter, FaDiscord } from "react-icons/fa";
+import { Link as ScrollLink } from "react-scroll";
 
 function Navbar() {
   const [isSidebarOpen, setisSidebarOpen] = useState(false);
@@ -48,36 +49,43 @@ function Navbar() {
             >
               <IoClose />
             </button>
-            <a
-              href="#"
+            <ScrollLink
+              to="Home"
               className="font-bold text-white text-lg cursor-pointer w-fit lg:text-lg"
+              onClick={() => setisSidebarOpen(false)}
             >
               Home
-            </a>
-            <a
-              href="#"
+            </ScrollLink>
+            <ScrollLink
+              to="Features"
               className="font-bold text-white text-lg cursor-pointer w-fit lg:text-lg"
+              onClick={() => setisSidebarOpen(false)}
+              offset={-100}
             >
               Features
-            </a>
-            <a
-              href="#"
+            </ScrollLink>
+            <ScrollLink
+              to="Roadmap"
               className="font-bold text-white text-lg cursor-pointer w-fit lg:text-lg"
+              onClick={() => setisSidebarOpen(false)}
+              offset={-100}
             >
               Roadmap
-            </a>
-            <a
-              href="#"
+            </ScrollLink>
+            <ScrollLink
+              to="Team"
               className="font-bold text-white text-lg cursor-pointer w-fit lg:text-lg"
+              onClick={() => setisSidebarOpen(false)}
             >
               The Team
-            </a>
-            <a
-              href="#"
+            </ScrollLink>
+            <ScrollLink
+              to="Support"
               className="font-bold text-white text-lg cursor-pointer w-fit lg:text-lg"
+              onClick={() => setisSidebarOpen(false)}
             >
               Support
-            </a>
+            </ScrollLink>
           </div>
 
           <div className={`black-screen ${isSidebarOpen ? "show" : ""}`}></div>
@@ -87,10 +95,10 @@ function Navbar() {
           </button>
 
           <div className="hidden lg:flex items-center space-x-3 md:space-x-6">
-            <a href="#" className="text-white text-xl md:text-[1.8rem]">
+            <a className="text-white text-xl md:text-[1.8rem]">
               <FaDiscord />
             </a>
-            <a href="#" className="text-white text-xl md:text-[1.6rem]">
+            <a className="text-white text-xl md:text-[1.6rem]">
               <FaTwitter />
             </a>
           </div>
