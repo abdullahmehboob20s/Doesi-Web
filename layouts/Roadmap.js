@@ -1,5 +1,6 @@
 import RoadmapRoad from "components/RoadmapRoad";
 import useMediaQuery from "hooks/useMediaQuery";
+import Image from "next/image";
 import React from "react";
 import { MdDone } from "react-icons/md";
 
@@ -23,7 +24,17 @@ function Roadmap() {
   const isAbove1024px = useMediaQuery("(min-width : 1024px)");
 
   return (
-    <div className="py-[4rem] pb-[6rem]">
+    <div className="py-[4rem] pb-[6rem] relative">
+      <div className="absolute top-0 left-0 w-full h-full z-[-10]">
+        <Image
+          src="/images/features-bg.png"
+          layout="fill"
+          alt="img"
+          loading="lazy"
+          className="object-cover"
+        />
+      </div>
+
       <div className="container">
         {isAbove1024px ? (
           <div className="flex space-x-16 items-center">
@@ -43,7 +54,7 @@ function Roadmap() {
               </div>
             </div>
 
-            <div className="flex-1 flex">
+            <div className="flex-1 flex justify-end">
               <div className="sm:max-w-[28rem] sm:w-full">
                 <RoadmapRoad />
               </div>

@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import FeatureCard from "components/FeatureCard";
 import useMediaQuery from "hooks/useMediaQuery";
+import Image from "next/image";
 
 function Features() {
   const defaultIndex = 2;
@@ -122,7 +123,17 @@ function Features() {
   ];
 
   return (
-    <div className="py-[4rem]">
+    <div className="py-[4rem] relative">
+      <div className="absolute top-0 left-0 w-full h-full z-[-10]">
+        <Image
+          src="/images/features-bg.png"
+          loading="lazy"
+          layout="fill"
+          alt="img"
+          className="object-cover"
+        />
+      </div>
+
       <Tabs defaultTab={3}>
         <div className="container">
           <header>

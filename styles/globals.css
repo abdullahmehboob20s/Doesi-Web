@@ -94,7 +94,7 @@
 
 @layer components {
   .container {
-    @apply max-w-[1700px] w-[90%] mx-auto xl:w-[78%];
+    @apply max-w-[1200px] w-[90%] mx-auto xl:w-[78%];
   }
 
   .button {
@@ -136,4 +136,21 @@
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #05153c !important;
+}
+
+.black-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 101 !important;
+  transition: all 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.black-screen.show {
+  opacity: 1;
+  pointer-events: visible;
 }

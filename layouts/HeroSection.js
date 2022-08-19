@@ -1,10 +1,32 @@
+import Image from "next/image";
 import React from "react";
 
 function HeroSection() {
   return (
-    <section className="">
+    <section className="relative">
+      <div className="absolute top-0 left-0 w-full h-screen z-[-10]">
+        <Image
+          src="/images/hero-bg.png"
+          layout="fill"
+          alt="img"
+          loading="lazy"
+          className="object-cover"
+        />
+      </div>
+
+      <div className="absolute bottom-0 left-0 w-full h-screen z-[-10] block md:hidden">
+        <Image
+          src="/images/features-bg.png"
+          layout="fill"
+          alt="img"
+          loading="lazy"
+          className="object-cover"
+        />
+      </div>
+
       <div className="container md:flex md:min-h-screen">
-        <div className="text-center min-h-screen flex justify-center flex-col md:min-h-[auto] md:flex-1 md:text-left md:items-start ">
+        {/*  */}
+        <div className="text-center min-h-screen flex justify-center relative flex-col md:min-h-[auto] md:flex-1 md:text-left md:items-start ">
           <div>
             <div className="mb-9">
               <img
@@ -34,12 +56,14 @@ function HeroSection() {
             </div>
           </div>
         </div>
+
+        {/*  */}
         <div className="min-h-screen flex justify-center flex-col sm:max-w-[30rem] md:w-full sm:mx-auto md:min-h-[auto] md:flex-1 md:max-w-[32rem]">
           <div className="bg-[rgba(17,84,255,0.2)] p-[1rem] rounded-[.6rem] grid grid-cols-[1fr,1fr] gap-[1rem]">
             <div className="bg-[rgba(17,84,255,0.2)] rounded-[.6rem] h-[30vw] flex items-center justify-center sm:h-[9rem] md:h-[14vw] lg:h-[10rem]">
               <img
                 src="images/shoe-2.png"
-                className="w-[80%] rotate-[-20deg] mb-[1rem]"
+                className="w-[80%] rotate-[-20deg] mb-[1rem] xl:w-[60%]"
                 alt=""
               />
             </div>
