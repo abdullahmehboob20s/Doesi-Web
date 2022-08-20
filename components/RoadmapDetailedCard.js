@@ -10,7 +10,16 @@ function RoadmapDetailedCard({
   arrowClassName,
 }) {
   return (
-    <div className="bg-[#1E2644] p-6 rounded-[6px] text-center flex flex-col items-center">
+    <div className="bg-[#1E2644] p-6 rounded-[6px] text-center flex flex-col items-center relative">
+      {status.value ? (
+        <div
+          className="py-[.2rem] px-[.8rem] font-bold text-[.7rem] hidden lg:block absolute top-0 right-0 rounded-bl-[6px]"
+          style={{ background: status.bg, color: status.textColor }}
+        >
+          {status.value}
+        </div>
+      ) : null}
+
       <header className="flex flex-col items-center space-y-2 justify-center">
         {iconOptions.link && iconOptions.Icon ? (
           <Link href={iconOptions.link} passHref>
@@ -29,7 +38,7 @@ function RoadmapDetailedCard({
         <p className="text-2xl text-white font-bold">{title}</p>
         {status.value ? (
           <div
-            className="py-[.2rem] px-[.8rem] rounded-[2rem] font-bold text-[.7rem]"
+            className="py-[.2rem] px-[.8rem] rounded-[2rem] font-bold text-[.7rem] lg:hidden"
             style={{ background: status.bg, color: status.textColor }}
           >
             {status.value}
@@ -37,7 +46,7 @@ function RoadmapDetailedCard({
         ) : null}
       </header>
 
-      <main className="min-h-[6rem] flex flex-col justify-center py-6 flex-1">
+      <main className="min-h-[6rem] flex flex-col justify-center py-6 flex-1 lg:justify-start">
         <p className="text-white text-lg leading-[1.4] max-w-[18rem]">{desc}</p>
       </main>
 
