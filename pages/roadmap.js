@@ -20,7 +20,7 @@ import Image from "next/image";
 function Roadmap() {
   return (
     <div>
-      <Navbar />
+      <Navbar scrollTrigger={50} />
 
       <div className="py-[160px] realtive">
         <div className="absolute top-0 left-0 w-full h-full z-[-10] bg-fixed">

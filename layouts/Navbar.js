@@ -5,14 +5,14 @@ import { FaTwitter, FaDiscord } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 
-function Navbar() {
+function Navbar({ scrollTrigger = 200 }) {
   const [isSidebarOpen, setisSidebarOpen] = useState(false);
   const sidebarRef = OutsideClickDetector(() => setisSidebarOpen(false));
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handler = () => {
-      if (window.scrollY > 200) {
+      if (window.scrollY > scrollTrigger) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -31,11 +31,13 @@ function Navbar() {
       }`}
     >
       <div className="container py-[1.6rem] flex items-center space-x-[1rem]">
-        <img
-          src="images/logo.svg"
-          className="cursor-pointer lg:w-[8rem]"
-          alt=""
-        />
+        <Link href="/">
+          <img
+            src="images/logo.svg"
+            className="cursor-pointer lg:w-[8rem]"
+            alt=""
+          />
+        </Link>
 
         <div className="flex items-center justify-between flex-1 sm:justify-end sm:space-x-6 lg:space-x-12">
           <div
@@ -73,13 +75,11 @@ function Navbar() {
             >
               Roadmap
             </ScrollLink>
-            <ScrollLink
-              to="Team"
-              className="font-bold text-white text-lg cursor-pointer w-fit lg:text-lg"
-              onClick={() => setisSidebarOpen(false)}
-            >
-              The Team
-            </ScrollLink>
+            <Link href="/team" onClick={() => setisSidebarOpen(false)}>
+              <a className="font-bold text-white text-lg cursor-pointer w-fit lg:text-lg">
+                The Team
+              </a>
+            </Link>
             <ScrollLink
               to="Support"
               className="font-bold text-white text-lg cursor-pointer w-fit lg:text-lg"
