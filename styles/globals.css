@@ -93,6 +93,7 @@
 
   body {
     @apply bg-[#040811] text-white;
+    background: #040811 !important;
   }
 }
 

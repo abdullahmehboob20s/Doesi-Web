@@ -55,7 +55,7 @@ function RoadmapRoad() {
 
         <div className="bg-[#334172] w-[2px] h-[100%] absolute bottom-0 left-[50%] translate-x-[-50%] z-[-10]"></div>
 
-        <Link href="https://www.doseinft.io/roadmapfull">
+        <Link href="/roadmap">
           <a className="bg-[#4D89FB] flex items-center justify-center w-[30vw] h-[8vw] rounded-[.4rem] absolute bottom-[1vw] left-[120%] text-[3.6vw] font-semibold sm:w-[8rem] sm:h-[2.6rem] sm:text-[1rem] sm:bottom-[.3rem]">
             View Roadmap
           </a>
