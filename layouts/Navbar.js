@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { FaTwitter, FaDiscord } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
 
 function Navbar() {
   const [isSidebarOpen, setisSidebarOpen] = useState(false);
@@ -95,12 +96,26 @@ function Navbar() {
           </button>
 
           <div className="hidden lg:flex items-center space-x-3 md:space-x-6">
-            <a className="text-white text-xl md:text-[1.8rem]">
-              <FaDiscord />
-            </a>
-            <a className="text-white text-xl md:text-[1.6rem]">
-              <FaTwitter />
-            </a>
+            <Link
+              href="https://discord.com/invite/dosei"
+              target="_blank"
+              passHref
+            >
+              <a
+                target="_blank"
+                className="text-white text-xl cursor-pointer md:text-[1.8rem]"
+              >
+                <FaDiscord />
+              </a>
+            </Link>
+            <Link href="https://twitter.com/DoseiNFT" target="_blank" passHref>
+              <a
+                target="_blank"
+                className="text-white text-xl cursor-pointer md:text-[1.6rem]"
+              >
+                <FaTwitter />
+              </a>
+            </Link>
           </div>
 
           <button

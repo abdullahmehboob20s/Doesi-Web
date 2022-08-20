@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaTwitter, FaDiscord } from "react-icons/fa";
 
@@ -12,12 +13,26 @@ function Footer() {
         </p>
 
         <div className="flex items-center space-x-3 md:space-x-6">
-          <a href="#" className="text-white text-xl md:text-[1.8rem]">
-            <FaDiscord />
-          </a>
-          <a href="#" className="text-white text-xl md:text-[1.6rem]">
-            <FaTwitter />
-          </a>
+          <Link
+            href="https://discord.com/invite/dosei"
+            target="_blank"
+            passHref
+          >
+            <a
+              target="_blank"
+              className="text-white text-xl cursor-pointer md:text-[1.8rem]"
+            >
+              <FaDiscord />
+            </a>
+          </Link>
+          <Link href="https://twitter.com/DoseiNFT" target="_blank" passHref>
+            <a
+              target="_blank"
+              className="text-white text-xl cursor-pointer md:text-[1.6rem]"
+            >
+              <FaTwitter />
+            </a>
+          </Link>
         </div>
       </div>
     </div>

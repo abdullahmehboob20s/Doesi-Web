@@ -1,7 +1,11 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import Typewriter from "typewriter-effect";
+import { useToast } from "@chakra-ui/toast";
 
 function HeroSection() {
+  const toast = useToast();
+
   return (
     <section className="relative">
       <div className="absolute top-0 left-0 w-full h-screen z-[-10]">
@@ -43,7 +47,18 @@ function HeroSection() {
               <button className="bg-[#4D89FB] w-[120px] h-[34px] rounded-[.4rem] text-base font-medium md:text-lg md:w-[140px] md:h-[40px] lg:text-xl lg:font-semibold lg:w-[170px] lg:h-[50px]">
                 Join Waitlist
               </button>
-              <button className="bg-[#4D89FB] w-[120px] h-[34px] rounded-[.4rem] flex items-center justify-center space-x-1 md:w-[140px] md:h-[40px] lg:w-[170px] lg:h-[50px]">
+              <button
+                className="bg-[#4D89FB] w-[120px] h-[34px] rounded-[.4rem] flex items-center justify-center space-x-1 md:w-[140px] md:h-[40px] lg:w-[170px] lg:h-[50px]"
+                onClick={() =>
+                  toast({
+                    title: `OpenSea Collection is not live yet, check back after public mint!`,
+                    isClosable: true,
+                    position: ["bottom"],
+                    status: "info",
+                    duration: 2000,
+                  })
+                }
+              >
                 <span className="block leading-[1.1] text-[10px] w-[7em] md:text-[12px] lg:text-[16px]">
                   View Collection On Opensea
                 </span>
@@ -58,7 +73,7 @@ function HeroSection() {
         </div>
 
         {/*  */}
-        <div className="min-h-screen flex justify-center flex-col sm:max-w-[30rem] md:w-full sm:mx-auto md:min-h-[auto] md:flex-1 md:max-w-[32rem]">
+        <div className="min-h-screen flex justify-center flex-col sm:max-w-[30rem] md:w-full sm:mx-auto md:min-h-[auto] md:flex-1 md:max-w-[36rem]">
           <div className="bg-[rgba(17,84,255,0.2)] p-[1rem] rounded-[.6rem] grid grid-cols-[1fr,1fr] gap-[1rem]">
             <div className="bg-[rgba(17,84,255,0.2)] rounded-[.6rem] h-[30vw] flex items-center justify-center sm:h-[9rem] md:h-[14vw] lg:h-[10rem]">
               <img
@@ -78,9 +93,29 @@ function HeroSection() {
             </div>
           </div>
 
-          <h1 className="text-[30px] leading-[1.2] font-[700] mt-[1rem] ml-[1rem]">
-            Never miss out on <span className="text-pink">Sneakers</span> with
-            Dosei.
+          <h1 className="text-[30px] xl:text-[28px] leading-[1.2] font-[700] mt-[1rem] ml-[1rem] flex flex-wrap">
+            <span className="mr-[.3em]">Never miss out on</span>
+            <Typewriter
+              options={{
+                loop: true,
+                wrapperClassName: "text-pink inline",
+              }}
+              onInit={(typewriter) => {
+                typewriter.typeString("Sneakers").pauseFor(2500).deleteAll();
+                typewriter.typeString("NFTs").pauseFor(2500).deleteAll();
+                typewriter
+                  .typeString("Sports Cards")
+                  .pauseFor(2500)
+                  .deleteAll();
+                typewriter.typeString("Releases").pauseFor(2500).deleteAll();
+                typewriter
+                  .typeString("Crypto")
+                  .pauseFor(2500)
+                  .deleteAll()
+                  .start();
+              }}
+            />
+            <span>with Dosei.</span>
           </h1>
         </div>
       </div>
