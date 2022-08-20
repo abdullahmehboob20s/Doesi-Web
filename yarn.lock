@@ -300,7 +300,7 @@
     "@chakra-ui/utils" "2.0.8"
     "csstype" "^3.0.11"
 
-"@chakra-ui/system@>=2.0.0", "@chakra-ui/system@2.2.6":
+"@chakra-ui/system@^2.2.6", "@chakra-ui/system@>=2.0.0", "@chakra-ui/system@2.2.6":
   "integrity" "sha512-I5q38ObqCrGXmLsxkc56F+1RONbpIIFJvOgq1upXMPOJWHqkzmdqaoJtpANhoE2LvB0GH/gRniiWN17WBCsOIQ=="
   "resolved" "https://registry.npmjs.org/@chakra-ui/system/-/system-2.2.6.tgz"
   "version" "2.2.6"
