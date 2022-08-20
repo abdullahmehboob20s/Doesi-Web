@@ -1,13 +1,16 @@
 import "../styles/globals.css";
-import { createStandaloneToast } from "@chakra-ui/toast";
+import { ChakraProvider } from "@chakra-ui/react";
 
-const { ToastContainer } = createStandaloneToast();
+// import { createStandaloneToast } from "@chakra-ui/toast";
+// const { ToastContainer } = createStandaloneToast();
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Component {...pageProps} />
-      <ToastContainer />
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
+      {/* <ToastContainer /> */}
     </>
   );
 }
