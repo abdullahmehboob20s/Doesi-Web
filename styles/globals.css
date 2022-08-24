@@ -159,3 +159,16 @@
   opacity: 1;
   pointer-events: visible;
 }
+
+.nft-slider {
+  width: 100% !important;
+}
+
+.nft-slider .swiper-wrapper {
+  width: 100% !important;
+}
+
+.nft-slider .swiper-slide {
+  width: 100% !important;
+  max-width: 100% !important;
+}

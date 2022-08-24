@@ -1,44 +1,78 @@
 import Link from "next/link";
 import React, { useContext } from "react";
 import DoseiCard from "./DoseiCard";
+import NFTCard from "./NFTCard";
+import NFTSkill from "./NFTSkill";
 import Tab from "./Tab";
 import Tab_Pan from "./TabPan";
 import { Tab_Context_Provider } from "./Tabs";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+
 function AccountDetails() {
   const { activeTab } = useContext(Tab_Context_Provider);
+  const navigationPrevRef = React.useRef(null);
+  const navigationNextRef = React.useRef(null);
 
   return (
-    <div className="grid grid-cols-[.5fr_1fr] gap-12">
+    <div className="grid grid-cols-[.5fr_1fr] gap-20">
       {/* LEFT */}
-      <div className="">
+      <div className="min-w-full relative">
         <h2 className="text-xl text-white font-semibold uppercase mb-4">
           Your Dosei NFT’s
         </h2>
 
-        <div className="overflow-hidden rounded-[6px] bg-white">
-          <img src="images/slider/test1.png" className="w-full" alt="" />
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={20}
+          modules={[Navigation]}
+          className="nft-slider"
+          navigation={{
+            prevEl: navigationPrevRef.current,
+            nextEl: navigationNextRef.current,
+          }}
+          onSwiper={(swiper) => {
+            setTimeout(() => {
+              if (swiper && swiper.params) {
+                swiper.params.navigation.prevEl = navigationPrevRef.current;
+                swiper.params.navigation.nextEl = navigationNextRef.current;
+                swiper.navigation.destroy();
+                swiper.navigation.init();
+                swiper.navigation.update();
+              }
+            });
+          }}
+        >
+          <SwiperSlide>
+            <NFTCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <NFTCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <NFTCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <NFTCard />
+          </SwiperSlide>
+        </Swiper>
 
-          <div className="p-3 px-5">
-            <p className="text-xl text-black font-semibold mb-1">
-              Dosei Genesis #777
-            </p>
-
-            <Link href="/">
-              <a className="flex items-center space-x-3 w-fit">
-                <span className="text-ourBlue font-black text-xl flex">
-                  View on OpenSea
-                </span>
-
-                <img
-                  src="images/opensea-icon-blue.svg"
-                  className="block w-[1.2rem]"
-                  alt=""
-                />
-              </a>
-            </Link>
-          </div>
-        </div>
+        <button
+          ref={navigationPrevRef}
+          className="flex absolute top-[50%] translate-y-[-50%] right-[106%] cursor-pointer text-[2rem] z-[10]"
+        >
+          <FaArrowAltCircleLeft />
+        </button>
+        <button
+          ref={navigationNextRef}
+          className="flex absolute top-[50%] translate-y-[-50%] left-[106%] cursor-pointer text-[2rem] z-[10]"
+        >
+          <FaArrowAltCircleRight />
+        </button>
       </div>
 
       {/* RIGHT */}

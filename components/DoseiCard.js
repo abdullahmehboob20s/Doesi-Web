@@ -19,7 +19,7 @@ function DoseiCard({ slogan, title, subtitle, img, color, steamLink = "/" }) {
             {subtitle}
           </p>
           <Link href={steamLink}>
-            <a className="w-[80%] mx-auto bg-[#6F6F6F] rounded-[6px] py-[.3rem] px-[1rem] flex justify-center items-center space-x-2">
+            <a className="w-[100%] mx-auto bg-[#6F6F6F] rounded-[6px] py-[.3rem] px-[.8rem] flex justify-center items-center space-x-2">
               <span>View On Steam Market </span>
               <img src="images/steamicon.png" className="w-[1.1rem]" alt="" />
             </a>
