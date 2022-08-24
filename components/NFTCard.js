@@ -2,10 +2,10 @@ import Link from "next/link";
 import React from "react";
 import NFTSkill from "./NFTSkill";
 
-function NFTCard() {
+function NFTCard({ img }) {
   return (
     <div className="overflow-hidden rounded-[6px] bg-white">
-      <img src="images/slider/test1.png" className="w-full" alt="" />
+      <img src={img} className="w-full" alt="" />
 
       <div className="p-3 px-5">
         <p className="text-xl text-black font-semibold mb-1">

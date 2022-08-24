@@ -48,16 +48,16 @@ function AccountDetails() {
           }}
         >
           <SwiperSlide>
-            <NFTCard />
+            <NFTCard img="images/slider/test1.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <NFTCard />
+            <NFTCard img="images/slider/test2.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <NFTCard />
+            <NFTCard img="images/slider/test3.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <NFTCard />
+            <NFTCard img="images/slider/test4.png" />
           </SwiperSlide>
         </Swiper>
 
