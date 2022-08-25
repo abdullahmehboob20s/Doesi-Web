@@ -89,7 +89,7 @@ function AccountDetails() {
           <div className="flex items-center space-x-4 sm:space-x-8">
             <Tab
               tabIndex={1}
-              className="cursor-pointer w-fit text-lg sm:text-xl font-medium text-white relative"
+              className="cursor-pointer w-fit text-lg sm:text-xl font-medium z-[20] text-white relative"
               activeClassName="text-[#1154FF]"
             >
               DOSEI
@@ -99,7 +99,7 @@ function AccountDetails() {
             </Tab>
             <Tab
               tabIndex={2}
-              className="cursor-pointer w-fit text-lg sm:text-xl font-medium text-white relative"
+              className="cursor-pointer w-fit text-lg sm:text-xl font-medium z-[20] text-white relative"
               activeClassName="text-[#1154FF]"
             >
               DOSEIAIO
@@ -110,7 +110,7 @@ function AccountDetails() {
           </div>
           <Tab
             tabIndex={3}
-            className="cursor-pointer w-fit text-lg sm:text-xl font-medium text-white relative"
+            className="cursor-pointer w-fit text-lg sm:text-xl font-medium z-[20] text-white relative"
             activeClassName="text-[#1154FF]"
           >
             SECURITY

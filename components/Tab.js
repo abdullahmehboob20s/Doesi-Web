@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Tab_Context_Provider } from "./Tabs";
 
 function Tab(props) {
