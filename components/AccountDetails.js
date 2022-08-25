@@ -1,8 +1,6 @@
-import Link from "next/link";
 import React, { useContext } from "react";
 import DoseiCard from "./DoseiCard";
 import NFTCard from "./NFTCard";
-import NFTSkill from "./NFTSkill";
 import Tab from "./Tab";
 import Tab_Pan from "./TabPan";
 import { Tab_Context_Provider } from "./Tabs";
@@ -14,15 +12,10 @@ import { Navigation } from "swiper";
 import {
   FaArrowAltCircleLeft,
   FaArrowAltCircleRight,
-  FaCloudDownloadAlt,
   FaDiscord,
-  FaShoppingCart,
-  FaUnlockAlt,
 } from "react-icons/fa";
-import { RiShutDownLine } from "react-icons/ri";
-import { CgRedo } from "react-icons/cg";
-import { IoGitNetworkOutline } from "react-icons/io5";
 import SecurityCard from "./SecurityCard";
+import Subscription from "./Subscription";
 
 function AccountDetails() {
   const { activeTab } = useContext(Tab_Context_Provider);
@@ -30,70 +23,73 @@ function AccountDetails() {
   const navigationNextRef = React.useRef(null);
 
   return (
-    <div className="grid grid-cols-[.5fr_1fr] gap-20">
+    <div className="grid grid-cols-[1fr] lg:grid-cols-[.5fr_1fr] gap-20">
       {/* LEFT */}
       <div className="min-w-full relative">
         <h2 className="text-xl text-white font-semibold uppercase mb-4">
           Your Dosei NFT’s
         </h2>
 
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={20}
-          modules={[Navigation]}
-          className="nft-slider"
-          navigation={{
-            prevEl: navigationPrevRef.current,
-            nextEl: navigationNextRef.current,
-          }}
-          onSwiper={(swiper) => {
-            setTimeout(() => {
-              if (swiper && swiper.params) {
-                swiper.params.navigation.prevEl = navigationPrevRef.current;
-                swiper.params.navigation.nextEl = navigationNextRef.current;
-                swiper.navigation.destroy();
-                swiper.navigation.init();
-                swiper.navigation.update();
-              }
-            });
-          }}
-        >
-          <SwiperSlide>
-            <NFTCard img="images/slider/test1.png" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <NFTCard img="images/slider/test2.png" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <NFTCard img="images/slider/test3.png" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <NFTCard img="images/slider/test4.png" />
-          </SwiperSlide>
-        </Swiper>
-
-        <button
-          ref={navigationPrevRef}
-          className="flex absolute top-[50%] translate-y-[-50%] right-[106%] cursor-pointer text-[2rem] z-[10]"
-        >
-          <FaArrowAltCircleLeft />
-        </button>
-        <button
-          ref={navigationNextRef}
-          className="flex absolute top-[50%] translate-y-[-50%] left-[106%] cursor-pointer text-[2rem] z-[10]"
-        >
-          <FaArrowAltCircleRight />
-        </button>
+        <div className="relative max-w-[24rem] w-full mx-auto">
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={20}
+            modules={[Navigation]}
+            className="nft-slider"
+            navigation={{
+              prevEl: navigationPrevRef.current,
+              nextEl: navigationNextRef.current,
+            }}
+            onSwiper={(swiper) => {
+              setTimeout(() => {
+                if (swiper && swiper.params) {
+                  swiper.params.navigation.prevEl = navigationPrevRef.current;
+                  swiper.params.navigation.nextEl = navigationNextRef.current;
+                  swiper.navigation.destroy();
+                  swiper.navigation.init();
+                  swiper.navigation.update();
+                }
+              });
+            }}
+          >
+            <SwiperSlide>
+              <NFTCard img="images/slider/test1.png" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <NFTCard img="images/slider/test2.png" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <NFTCard img="images/slider/test3.png" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <NFTCard img="images/slider/test4.png" />
+            </SwiperSlide>
+          </Swiper>
+          <div className="flex items-center justify-center space-x-4 sm:space-x-0 mt-4 sm:mt-0">
+            <button
+              ref={navigationPrevRef}
+              className="flex sm:absolute top-[50%] sm:translate-y-[-50%] right-[106%] cursor-pointer text-[1.5rem] sm:text-[2rem] z-[10]"
+            >
+              <FaArrowAltCircleLeft />
+            </button>
+            <button
+              ref={navigationNextRef}
+              className="flex sm:absolute top-[50%] sm:translate-y-[-50%] left-[106%] cursor-pointer text-[1.5rem] sm:text-[2rem] z-[10]"
+            >
+              <FaArrowAltCircleRight />
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* RIGHT */}
       <div>
         {/* HEADER */}
-        <div className="flex items-center justify-between pb-2 border-b-[5px] border-[#101319] mb-[30px]">
-          <div className="flex items-center space-x-8">
+        <div className="flex items-center justify-[unset] space-x-4 sm:space-x-0 sm:justify-between pb-2 border-b-[5px] border-[#101319] mb-[30px]">
+          <div className="flex items-center space-x-4 sm:space-x-8">
             <Tab
               tabIndex={1}
-              className="cursor-pointer w-fit text-xl font-medium text-white relative"
+              className="cursor-pointer w-fit text-lg sm:text-xl font-medium text-white relative"
               activeClassName="text-[#1154FF]"
             >
               DOSEI
@@ -103,7 +99,7 @@ function AccountDetails() {
             </Tab>
             <Tab
               tabIndex={2}
-              className="cursor-pointer w-fit text-xl font-medium text-white relative"
+              className="cursor-pointer w-fit text-lg sm:text-xl font-medium text-white relative"
               activeClassName="text-[#1154FF]"
             >
               DOSEIAIO
@@ -114,7 +110,7 @@ function AccountDetails() {
           </div>
           <Tab
             tabIndex={3}
-            className="cursor-pointer w-fit text-xl font-medium text-white relative"
+            className="cursor-pointer w-fit text-lg sm:text-xl font-medium text-white relative"
             activeClassName="text-[#1154FF]"
           >
             SECURITY
@@ -126,12 +122,12 @@ function AccountDetails() {
 
         {/* BODY */}
 
-        <div className="bg-[#10131A] p-6 px-8 rounded-[10px]">
+        <div className="bg-[#10131A] p-4 px-6 sm:p-6 sm:px-8 rounded-[10px]">
           <Tab_Pan tabIndex={1}>
-            <h1 className="text-3xl text-white font-medium mb-[22px]">
+            <h1 className="text-2xl sm:text-3xl text-white font-medium mb-[22px]">
               Burnables
             </h1>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <DoseiCard
                 color="#FA3A3A"
                 title="Airdrop One"
@@ -152,100 +148,15 @@ function AccountDetails() {
           </Tab_Pan>
 
           <Tab_Pan tabIndex={2}>
-            <h1 className="text-3xl text-white font-medium mb-[22px]">
+            <h1 className="text-2xl sm:text-3xl text-white font-medium mb-[22px]">
               Subscription
             </h1>
 
-            <div className="grid grid-cols-[1fr_.5fr] gap-y-8 gap-x-2">
-              <div>
-                <div className="mb-8">
-                  <div className="mb-3">
-                    <h4 className="text-xl font-semibold text-white">
-                      Membership Type:{" "}
-                    </h4>
-                    <p className="text-lg text-ourBlue font-normal">
-                      Dosei - Monthly - No Unbind{" "}
-                    </p>
-                  </div>
-                  <div className="mb-3">
-                    <h4 className="text-xl font-semibold text-white">Key:</h4>{" "}
-                    <p className="text-lg text-ourBlue font-normal">
-                      JD4SI-RMFK2-93LFP
-                    </p>
-                  </div>
-                  <div className="mb-3">
-                    <h4 className="text-xl font-semibold text-white">
-                      Expires ON:
-                    </h4>{" "}
-                    <p className="text-lg text-ourBlue font-normal">
-                      9/22/2022
-                    </p>
-                  </div>
-                  <div className="mb-3">
-                    <h4 className="text-xl font-semibold text-white">
-                      Instances:
-                    </h4>{" "}
-                    <p className="text-lg text-ourBlue font-normal">1</p>
-                  </div>
-                </div>
-
-                <button className="flex items-center space-x-4 bg-[#1D1F26] py-2 px-4 rounded-lg">
-                  <p className="text-sm text-white leading-[1.3]">
-                    102.23.291.293 <br />
-                    <span className="text-gray-400">Last Connected:</span>
-                  </p>
-                  <span className="text-[1.4rem] text-white">
-                    <RiShutDownLine />
-                  </span>
-                </button>
-              </div>
-
-              <div className="space-y-3">
-                <button className="w-full py-1 px-3 bg-[#1D1F26] rounded-lg flex items-center space-x-3 justify-center">
-                  <span className="text-xl text-white font-medium">
-                    Download
-                  </span>
-                  <span className="text-[1.2rem] text-white">
-                    <FaCloudDownloadAlt />
-                  </span>
-                </button>{" "}
-                <button className="w-full py-1 px-3 bg-[#1D1F26] rounded-lg flex items-center space-x-3 justify-center">
-                  <span className="text-xl text-white font-medium">Unbind</span>
-                  <span className="text-[1rem] text-white">
-                    <FaUnlockAlt />
-                  </span>
-                </button>{" "}
-                <button className="w-full py-1 px-3 bg-[#1D1F26] rounded-lg flex items-center space-x-3 justify-center">
-                  <span className="text-xl text-white font-medium">
-                    Scramble Key
-                  </span>
-                  <span className="text-[1.2rem] text-white">
-                    <IoGitNetworkOutline />
-                  </span>
-                </button>
-              </div>
-
-              <div className="flex space-x-6 col-span-2">
-                <button className="flex-1 py-1 px-3 bg-[#1557FF] rounded-lg flex items-center space-x-3 justify-center">
-                  <span className="text-xl text-white font-medium">Renew</span>
-                  <span className="text-[1.4rem] text-white">
-                    <CgRedo />
-                  </span>
-                </button>
-                <button className="flex-1 py-1 px-3 bg-[#1D1F26] rounded-lg flex items-center space-x-3 justify-center">
-                  <span className="text-xl text-white font-medium">
-                    Purchase Instances
-                  </span>
-                  <span className="text-[1.2rem] text-white">
-                    <FaShoppingCart />
-                  </span>
-                </button>
-              </div>
-            </div>
+            <Subscription />
           </Tab_Pan>
 
           <Tab_Pan tabIndex={3}>
-            <h1 className="text-3xl text-white font-medium mb-[22px]">
+            <h1 className="text-2xl sm:text-3xl text-white font-medium mb-[22px]">
               Multi-Factor Authentication
             </h1>
 
@@ -272,7 +183,7 @@ function AccountDetails() {
                 img={
                   <img
                     src="images/metamaskicon.svg"
-                    className="w-[1.2rem]"
+                    className="w-[1rem] sm:w-[1.2rem]"
                     alt=""
                   />
                 }

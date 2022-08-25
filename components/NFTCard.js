@@ -8,30 +8,30 @@ function NFTCard({ img }) {
       <img src={img} className="w-full" alt="" />
 
       <div className="p-3 px-5">
-        <p className="text-xl text-black font-semibold mb-1">
+        <p className="text-lg sm:text-xl text-black font-semibold sm:mb-1">
           Dosei Genesis #777
         </p>
 
         <Link href="/">
-          <a className="flex items-center space-x-3 w-fit mb-3">
-            <span className="text-ourBlue font-black text-xl flex">
+          <a className="flex items-center space-x-2 sm:space-x-3 w-fit mb-3">
+            <span className="text-ourBlue font-black  text-lg sm:text-xl flex">
               View on OpenSea
             </span>
 
             <img
               src="images/opensea-icon-blue.svg"
-              className="block w-[1.2rem]"
+              className="block w-[1.1rem] sm:w-[1.2rem]"
               alt=""
             />
           </a>
         </Link>
 
         <div>
-          <h2 className="text-xl text-gray-400 font-semibold mb-3">
+          <h2 className="text-lg sm:text-xl text-gray-400 font-semibold mb-3">
             Properties
           </h2>
 
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-[6px] sm:gap-2">
             <NFTSkill
               title="Background"
               subtitle="Light Blue"

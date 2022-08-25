@@ -141,15 +141,15 @@ function Navbar({
 
         {showProfile ? (
           <div className="flex-1 flex items-center justify-end space-x-6">
-            <div className="w-[50px] h-[50px] rounded-full cursor-pointer">
+            <div className="w-[32px] h-[32px] sm:w-[50px] sm:h-[50px] rounded-full cursor-pointer">
               <img src="images/user.png" className="w-full h-full" alt="" />
             </div>
 
-            <button className="bg-[#10131A] rounded-[4px] py-[.4rem] px-[.8rem] flex items-center space-x-4">
-              <span className="text-xl font-normal flex text-white leading-[1]">
+            <button className="bg-[#10131A] rounded-[4px] py-[.2rem] px-[.6rem] sm:py-[.4rem] sm:px-[.8rem] flex items-center space-x-4">
+              <span className="text-base sm:text-xl font-normal flex text-white leading-[1]">
                 Logout
               </span>
-              <span className="text-[1.2rem] flex">
+              <span className="text-sm sm:text-[1.2rem] flex">
                 <FiLogOut />
               </span>
             </button>
