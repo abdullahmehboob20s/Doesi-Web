@@ -6,12 +6,12 @@ function Tab(props) {
   let { label, tabIndex, className, activeClassName, children } = props;
   let active = activeTab === tabIndex;
   return (
-    <div
-      className={active ? className + " " + activeClassName : className}
+    <button
       onClick={() => setActiveTab(tabIndex)}
+      className={active ? className + " " + activeClassName : className}
     >
-      {label ? label : children}
-    </div>
+      {children}
+    </button>
   );
 }
 

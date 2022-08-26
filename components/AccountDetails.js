@@ -85,29 +85,28 @@ function AccountDetails() {
       {/* RIGHT */}
       <div>
         {/* HEADER */}
-        <div className="flex items-center justify-[unset] space-x-4 sm:space-x-0 sm:justify-between pb-2 border-b-[5px] border-[#101319] mb-[30px]">
-          <div className="flex items-center space-x-4 sm:space-x-8">
-            <Tab
-              tabIndex={1}
-              className="cursor-pointer w-fit text-lg sm:text-xl font-medium z-[20] text-white relative"
-              activeClassName="text-[#1154FF]"
-            >
-              DOSEI
-              {activeTab === 1 ? (
-                <div className="absolute top-[130%] left-0 h-[5px] bg-[#1154FF] w-full"></div>
-              ) : null}
-            </Tab>
-            <Tab
-              tabIndex={2}
-              className="cursor-pointer w-fit text-lg sm:text-xl font-medium z-[20] text-white relative"
-              activeClassName="text-[#1154FF]"
-            >
-              DOSEIAIO
-              {activeTab === 2 ? (
-                <div className="absolute top-[130%] left-0 h-[5px] bg-[#1154FF] w-full"></div>
-              ) : null}
-            </Tab>
-          </div>
+        <div className="items-center pb-2 border-b-[5px] border-[#101319] mb-[30px] flex space-x-6 sm:space-x-0 sm:grid sm:grid-cols-[auto_auto_1fr_auto] sm:gap-6">
+          <Tab
+            tabIndex={1}
+            className="cursor-pointer w-fit text-lg sm:text-xl font-medium z-[20] text-white relative"
+            activeClassName="text-[#1154FF]"
+          >
+            DOSEI
+            {activeTab === 1 ? (
+              <div className="absolute top-[130%] left-0 h-[5px] bg-[#1154FF] w-full"></div>
+            ) : null}
+          </Tab>
+          <Tab
+            tabIndex={2}
+            className="cursor-pointer w-fit text-lg sm:text-xl font-medium z-[20] text-white relative"
+            activeClassName="text-[#1154FF]"
+          >
+            DOSEIAIO
+            {activeTab === 2 ? (
+              <div className="absolute top-[130%] left-0 h-[5px] bg-[#1154FF] w-full"></div>
+            ) : null}
+          </Tab>
+          <div className="hidden sm:block"></div>
           <Tab
             tabIndex={3}
             className="cursor-pointer w-fit text-lg sm:text-xl font-medium z-[20] text-white relative"
