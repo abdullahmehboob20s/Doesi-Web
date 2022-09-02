@@ -150,7 +150,7 @@
   }
 
   #tutorial-page .section-card {
-    @apply container flex max-w-[30rem] lg:max-w-none flex-col lg:flex-row items-center space-y-10 lg:space-y-0 lg:space-x-20;
+    @apply flex max-w-[30rem] lg:max-w-[1200px] w-[90%] mx-auto xl:w-[78%] flex-col lg:flex-row items-center space-y-10 lg:space-y-0 lg:space-x-20;
   }
 }
 
