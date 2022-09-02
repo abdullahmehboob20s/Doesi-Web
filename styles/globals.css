@@ -128,22 +128,29 @@
     @apply mb-[6.25rem];
   }
   .mb-200px {
-    @apply mb-[12.5rem];
+    @apply mb-[8rem] lg:mb-[10rem] xl:mb-[12.5rem];
   }
 
   /* tutorial-page =============== */
 
   #tutorial-page .fs-60px {
-    @apply text-6xl;
+    @apply text-2xl md:text-4xl lg:text-5xl xl:text-6xl;
   }
   #tutorial-page .fs-20px {
-    @apply text-xl;
+    @apply text-sm md:text-base lg:text-lg xl:text-xl;
   }
   #tutorial-page .fs-24px {
-    @apply text-2xl;
+    @apply text-bsae lg:text-xl xl:text-2xl;
   }
   #tutorial-page .fs-48px {
-    @apply text-5xl;
+    @apply text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+  }
+  #tutorial-page .heading {
+    @apply font-bold text-white mb-5 lg:mb-8;
+  }
+
+  #tutorial-page .section-card {
+    @apply container flex max-w-[30rem] lg:max-w-none flex-col lg:flex-row items-center space-y-10 lg:space-y-0 lg:space-x-20;
   }
 }
 

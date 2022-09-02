@@ -3,12 +3,12 @@ import React from "react";
 
 function SkinsLocated() {
   return (
-    <div className="container grid grid-cols-2 items-center gap-20">
+    <div className="section-card">
       <div className="flex-1 space-y-4">
         <img src="images/skins-located.png" className="w-full" alt="" />
       </div>
       <div className="flex-1">
-        <h1 className="font-bold text-white fs-48px mb-8">
+        <h1 className="heading fs-48px">
           Where are my skins located and how will I receive them?
         </h1>
 

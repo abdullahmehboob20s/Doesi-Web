@@ -3,11 +3,9 @@ import React from "react";
 
 function WhatIsBurningNFTS() {
   return (
-    <div className="container flex space-x-20 justify-between">
-      <div className="w-[50%]">
-        <h1 className="font-bold text-white fs-48px mb-8">
-          What is “Burning NFTs”?
-        </h1>
+    <div className="section-card">
+      <div className="w-full lg:w-[50%]">
+        <h1 className="heading fs-48px">What is “Burning NFTs”?</h1>
 
         <p className="fs-20px font-normal mb-6">
           Burning NFTs is the process of permanently removing an NFT from the
@@ -27,8 +25,8 @@ function WhatIsBurningNFTS() {
           .
         </p>
       </div>
-      <div className="w-[30%]">
-        <img src="images/buning-NFTS.png" className="w-full" alt="" />
+      <div className="flex-1 flex justify-center lg:justify-end">
+        <img src="images/buning-NFTS.png" className="w-[50%]" alt="" />
       </div>
     </div>
   );

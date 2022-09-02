@@ -2,8 +2,8 @@ import React from "react";
 
 function HowItWorks() {
   return (
-    <div className="container grid grid-cols-2 items-center gap-20">
-      <div className="flex-1 space-y-4">
+    <div className="section-card">
+      <div className="flex-1 space-y-4 w-full">
         <div className="bg-[#3B9EFE] fs-20px text-white text-center font-normal py-2 px-8 rounded-md">
           Common (60% of NFTs)
         </div>
@@ -21,7 +21,7 @@ function HowItWorks() {
         </div>
       </div>
       <div className="flex-1">
-        <h1 className="font-bold text-white fs-60px mb-8">How It Works</h1>
+        <h1 className="heading fs-60px">How It Works</h1>
 
         <p className="fs-20px font-normal mb-6">
           The airdrop you receive{" "}

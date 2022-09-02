@@ -9,7 +9,7 @@ function Tutorial() {
   return (
     <div id="tutorial-page">
       <Navbar />
-      <div className="mb-100px">
+      <div className="md:mb-100px">
         <AirDrop />
       </div>
       <div className="mb-200px">
