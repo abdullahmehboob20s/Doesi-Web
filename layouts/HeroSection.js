@@ -93,12 +93,12 @@ function HeroSection() {
             </div>
           </div>
 
-          <h1 className="text-[30px] xl:text-[28px] leading-[1.2] font-[700] mt-[1rem] ml-[1rem] flex flex-wrap">
-            <span className="mr-[.3em]">Never miss out on</span>
+          <h1 className="text-[30px] font-Calibri xl:text-[28px] leading-[1.2] font-[700] mt-[1rem] ml-[1rem] flex flex-wrap">
+            <span className="font-Calibri mr-[.3em]">Never miss out on</span>
             <Typewriter
               options={{
                 loop: true,
-                wrapperClassName: "text-pink inline",
+                wrapperClassName: "text-pink inline font-Calibri",
               }}
               onInit={(typewriter) => {
                 typewriter.typeString("Sneakers").pauseFor(2500).deleteAll();
