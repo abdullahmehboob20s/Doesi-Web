@@ -81,7 +81,7 @@ function Navbar({
               >
                 Roadmap
               </ScrollLink>
-              <Link href="/team" onClick={() => setisSidebarOpen(false)}>
+              <Link href="/team">
                 <a className="font-bold text-white text-lg cursor-pointer w-fit lg:text-lg">
                   The Team
                 </a>
