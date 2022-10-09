@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "Calibri";
-  src: url("../public/fonts/Calibri/Calibri-LightItalic.eot");
+  src: url("../public/fonts/Calibri/Calibri-LightItalic.woff2");
   src: local("Calibri Light Italic"),
     local("../public/fonts/Calibri/Calibri-LightItalic"),
     url("../public/fonts/Calibri/Calibri-LightItalic.eot?#iefix")
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: "Calibri";
-  src: url("../public/fonts/Calibri/Calibri-Italic.eot");
+  src: url("../public/fonts/Calibri/Calibri-Italic.woff2");
   src: local("Calibri Italic"), local("../public/fonts/Calibri/Calibri-Italic"),
     url("../public/fonts/Calibri/Calibri-Italic.eot?#iefix")
       format("embedded-opentype"),
@@ -31,7 +31,7 @@
 
 @font-face {
   font-family: "Calibri";
-  src: url("../public/fonts/Calibri/Calibri-Light.eot");
+  src: url("../public/fonts/Calibri/Calibri-Light.woff2");
   src: local("Calibri Light"), local("../public/fonts/Calibri/Calibri-Light"),
     url("../public/fonts/Calibri/Calibri-Light.eot?#iefix")
       format("embedded-opentype"),
@@ -44,7 +44,7 @@
 
 @font-face {
   font-family: "Calibri";
-  src: url("../public/fonts/Calibri/Calibri-Bold.eot");
+  src: url("../public/fonts/Calibri/Calibri-Bold.woff2");
   src: local("Calibri Bold"), local("../public/fonts/Calibri/Calibri-Bold"),
     url("../public/fonts/Calibri/Calibri-Bold.eot?#iefix")
       format("embedded-opentype"),
@@ -57,7 +57,7 @@
 
 @font-face {
   font-family: "Calibri";
-  src: url("../public/fonts/Calibri/Calibri.eot");
+  src: url("../public/fonts/Calibri/Calibri.woff2");
   src: local("Calibri"),
     url("../public/fonts/Calibri/Calibri.eot?#iefix")
       format("embedded-opentype"),
@@ -70,7 +70,7 @@
 
 @font-face {
   font-family: "Calibri";
-  src: url("../public/fonts/Calibri/Calibri-BoldItalic.eot");
+  src: url("../public/fonts/Calibri/Calibri-BoldItalic.woff2");
   src: local("Calibri Bold Italic"),
     local("../public/fonts/Calibri/Calibri-BoldItalic"),
     url("../public/fonts/Calibri/Calibri-BoldItalic.eot?#iefix")
